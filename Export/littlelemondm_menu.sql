@@ -1,5 +1,3 @@
-CREATE DATABASE  IF NOT EXISTS `littlelemondm` /*!40100 DEFAULT CHARACTER SET utf8mb3 */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `littlelemondm`;
 -- MySQL dump 10.13  Distrib 8.0.33, for Win64 (x86_64)
 --
 -- Host: 127.0.0.1    Database: littlelemondm
@@ -25,14 +23,14 @@ DROP TABLE IF EXISTS `menu`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `menu` (
-  `MenuID` int NOT NULL,
+  `MenuID` int NOT NULL AUTO_INCREMENT,
   `MenuItemsID` int NOT NULL,
   `MenuName` varchar(45) NOT NULL,
   `Cuisine` varchar(45) NOT NULL,
   PRIMARY KEY (`MenuID`),
   KEY `fk_Menu_MenuItems1_idx` (`MenuItemsID`),
   CONSTRAINT `fk_Menu_MenuItems1` FOREIGN KEY (`MenuItemsID`) REFERENCES `menuitems` (`MenuItemsID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -41,6 +39,7 @@ CREATE TABLE `menu` (
 
 LOCK TABLES `menu` WRITE;
 /*!40000 ALTER TABLE `menu` DISABLE KEYS */;
+INSERT INTO `menu` VALUES (1,1,'Fishy Stew','French'),(2,2,'Eggy Surprise','French'),(3,3,'Beefy Stew','French'),(4,4,'Even More Cheese','Italian'),(5,5,'Other Beefy Stew','Italian'),(6,6,'Chicky Something','Italian');
 /*!40000 ALTER TABLE `menu` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -53,4 +52,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-08-04 15:04:48
+-- Dump completed on 2023-08-10 15:10:16

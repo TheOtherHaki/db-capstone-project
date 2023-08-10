@@ -1,5 +1,3 @@
-CREATE DATABASE  IF NOT EXISTS `littlelemondm` /*!40100 DEFAULT CHARACTER SET utf8mb3 */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `littlelemondm`;
 -- MySQL dump 10.13  Distrib 8.0.33, for Win64 (x86_64)
 --
 -- Host: 127.0.0.1    Database: littlelemondm
@@ -25,13 +23,13 @@ DROP TABLE IF EXISTS `employees`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `employees` (
-  `EmployeeID` int NOT NULL,
+  `EmployeeID` int NOT NULL AUTO_INCREMENT,
   `FullName` varchar(100) NOT NULL,
-  `Phone` int NOT NULL,
+  `Phone` char(10) NOT NULL,
   `Address` varchar(255) NOT NULL,
   `Email` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`EmployeeID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -40,6 +38,7 @@ CREATE TABLE `employees` (
 
 LOCK TABLES `employees` WRITE;
 /*!40000 ALTER TABLE `employees` DISABLE KEYS */;
+INSERT INTO `employees` VALUES (1,'Wallace Porter','1612848962','819 Pacific St. Far Rockaway, NY 11691','wporter@llemon.com'),(2,'Ella Velasquez','1614821568','395 Plymouth Drive Far Rockaway, NY 11691','evelasquez@llemon.com'),(3,'Karla Monroe','1614112684','450 Swanson Dr. Far Rockaway, NY 11691','kmonroe@llemon.com'),(4,'Ned Solis','1614458913','67 Harvard Dr.  Far Rockaway, NY 11691','nsolis@llemon.com'),(5,'Gerry Liu','1614458913','137 Hudson St. Far Rockaway, NY 11691','gliu@llemon.com');
 /*!40000 ALTER TABLE `employees` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -52,4 +51,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-08-04 15:04:48
+-- Dump completed on 2023-08-10 15:10:16

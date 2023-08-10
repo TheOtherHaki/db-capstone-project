@@ -1,5 +1,3 @@
-CREATE DATABASE  IF NOT EXISTS `littlelemondm` /*!40100 DEFAULT CHARACTER SET utf8mb3 */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `littlelemondm`;
 -- MySQL dump 10.13  Distrib 8.0.33, for Win64 (x86_64)
 --
 -- Host: 127.0.0.1    Database: littlelemondm
@@ -25,12 +23,12 @@ DROP TABLE IF EXISTS `customers`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `customers` (
-  `CustomerID` int NOT NULL,
+  `CustomerID` int NOT NULL AUTO_INCREMENT,
   `FullName` varchar(100) DEFAULT NULL,
-  `ContactNumber` int DEFAULT NULL,
+  `ContactNumber` char(10) DEFAULT NULL,
   `Email` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`CustomerID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -39,6 +37,7 @@ CREATE TABLE `customers` (
 
 LOCK TABLES `customers` WRITE;
 /*!40000 ALTER TABLE `customers` DISABLE KEYS */;
+INSERT INTO `customers` VALUES (1,'Jimmy Odom','2516511984','jodom@gmail.com'),(2,'Kurt Ferguson','4243787831','kferguson@gmail.com'),(3,'Leann Salinas','4535941286','lsalinas@yahoo.com'),(4,'Alisa Carrillo','7462215896','acarrillo@hotmail.com'),(5,'Karina Rose','1528864268','krose@hotmail.com'),(6,'Laverne Wright','5682168616','lwright@gmail.com'),(7,'Eloy Holloway','3581685515','eholloway@gmail.com'),(8,'Norbert Change','3525566981','nchang@gmail.com'),(9,'Gregorio McCall','4655846215','gmccall@gmail.com'),(10,'Ethan Peck','1584359941','epeck@yahoo.com');
 /*!40000 ALTER TABLE `customers` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -51,4 +50,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-08-04 15:04:48
+-- Dump completed on 2023-08-10 15:10:16

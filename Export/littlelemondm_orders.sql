@@ -1,5 +1,3 @@
-CREATE DATABASE  IF NOT EXISTS `littlelemondm` /*!40100 DEFAULT CHARACTER SET utf8mb3 */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `littlelemondm`;
 -- MySQL dump 10.13  Distrib 8.0.33, for Win64 (x86_64)
 --
 -- Host: 127.0.0.1    Database: littlelemondm
@@ -25,7 +23,7 @@ DROP TABLE IF EXISTS `orders`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `orders` (
-  `OrderID` int NOT NULL,
+  `OrderID` int NOT NULL AUTO_INCREMENT,
   `OrderDate` datetime NOT NULL,
   `Quantity` int NOT NULL,
   `Cost` decimal(5,2) NOT NULL,
@@ -39,7 +37,7 @@ CREATE TABLE `orders` (
   CONSTRAINT `fk_Orders_Customers1` FOREIGN KEY (`CustomerID`) REFERENCES `customers` (`CustomerID`),
   CONSTRAINT `fk_Orders_Deliveries` FOREIGN KEY (`DeliveryID`) REFERENCES `deliveries` (`DeliveryID`),
   CONSTRAINT `fk_Orders_Menu1` FOREIGN KEY (`MenuID`) REFERENCES `menu` (`MenuID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -48,6 +46,7 @@ CREATE TABLE `orders` (
 
 LOCK TABLES `orders` WRITE;
 /*!40000 ALTER TABLE `orders` DISABLE KEYS */;
+INSERT INTO `orders` VALUES (1,'2023-05-07 00:00:00',3,45.56,3,1,1),(2,'2023-05-07 00:00:00',1,12.45,1,4,2),(3,'2023-05-07 00:00:00',5,100.34,5,2,3),(4,'2023-05-07 00:00:00',2,34.65,6,7,4),(5,'2023-05-07 00:00:00',4,67.87,3,4,5),(6,'2023-05-07 00:00:00',1,15.65,2,4,6),(7,'2023-05-07 00:00:00',1,13.54,4,8,7),(8,'2023-05-08 00:00:00',5,76.87,2,5,8);
 /*!40000 ALTER TABLE `orders` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -60,4 +59,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-08-04 15:04:48
+-- Dump completed on 2023-08-10 15:10:16
