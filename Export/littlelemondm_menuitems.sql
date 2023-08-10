@@ -1,5 +1,3 @@
-CREATE DATABASE  IF NOT EXISTS `littlelemondm` /*!40100 DEFAULT CHARACTER SET utf8mb3 */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `littlelemondm`;
 -- MySQL dump 10.13  Distrib 8.0.33, for Win64 (x86_64)
 --
 -- Host: 127.0.0.1    Database: littlelemondm
@@ -25,12 +23,12 @@ DROP TABLE IF EXISTS `menuitems`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `menuitems` (
-  `MenuItemsID` int NOT NULL,
+  `MenuItemsID` int NOT NULL AUTO_INCREMENT,
   `CourseName` varchar(45) DEFAULT NULL,
   `StarterName` varchar(45) DEFAULT NULL,
   `DesertName` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`MenuItemsID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -39,6 +37,7 @@ CREATE TABLE `menuitems` (
 
 LOCK TABLES `menuitems` WRITE;
 /*!40000 ALTER TABLE `menuitems` DISABLE KEYS */;
+INSERT INTO `menuitems` VALUES (1,'Bouillabaisse','Salmon Canapes','Rasberry Macarons'),(2,'Quiche Lorraine','Salmon Canapes','Plum Galette'),(3,'Beef Bourguignon','Cheese Tart','Cream Puffs'),(4,'Three Cheese Lasagna','Bruschetta','Strawberry Gelato'),(5,'Beef Brasato','Eggplant Caponata','Chocolate Biscotti'),(6,'Braised Chicken','Bruschetta','Chocolate Biscotti');
 /*!40000 ALTER TABLE `menuitems` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -51,4 +50,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-08-04 15:04:48
+-- Dump completed on 2023-08-10 15:10:16

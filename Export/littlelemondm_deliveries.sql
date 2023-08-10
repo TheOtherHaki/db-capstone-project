@@ -1,5 +1,3 @@
-CREATE DATABASE  IF NOT EXISTS `littlelemondm` /*!40100 DEFAULT CHARACTER SET utf8mb3 */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `littlelemondm`;
 -- MySQL dump 10.13  Distrib 8.0.33, for Win64 (x86_64)
 --
 -- Host: 127.0.0.1    Database: littlelemondm
@@ -25,11 +23,11 @@ DROP TABLE IF EXISTS `deliveries`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `deliveries` (
-  `DeliveryID` int NOT NULL,
+  `DeliveryID` int NOT NULL AUTO_INCREMENT,
   `DeliveryStatus` varchar(45) NOT NULL,
   `Address` varchar(255) NOT NULL,
   PRIMARY KEY (`DeliveryID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -38,6 +36,7 @@ CREATE TABLE `deliveries` (
 
 LOCK TABLES `deliveries` WRITE;
 /*!40000 ALTER TABLE `deliveries` DISABLE KEYS */;
+INSERT INTO `deliveries` VALUES (1,'Complete','8435 Bald Hill Drive Far Rockaway, NY 11691'),(2,'Complete','8376 River Court Far Rockaway, NY 11691'),(3,'Pending','242 Center Dr. Far Rockaway, NY 11691'),(4,'Out for Delivery','140 Somerset St.  Far Rockaway, NY 11691'),(5,'Pending','7 Fremont Rd. Far Rockaway, NY 11691'),(6,'Pending','126 Thomas St. Far Rockaway, NY 11691'),(7,'Pending','292 Fordham St. Far Rockaway, NY 11691'),(8,'Complete','51 Cedar Swamp St. Far Rockaway, NY 11691');
 /*!40000 ALTER TABLE `deliveries` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -50,4 +49,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-08-04 15:04:48
+-- Dump completed on 2023-08-10 15:10:16
