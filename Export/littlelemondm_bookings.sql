@@ -27,13 +27,10 @@ CREATE TABLE `bookings` (
   `TableNum` int NOT NULL,
   `BookDate` datetime NOT NULL,
   `CustomerID` int NOT NULL,
-  `EmployeeID` int NOT NULL,
   PRIMARY KEY (`BookingID`),
-  KEY `fk_Bookings_Employees1_idx` (`EmployeeID`),
   KEY `fk_Bookings_Customers1_idx` (`CustomerID`),
-  CONSTRAINT `fk_Bookings_Customers1` FOREIGN KEY (`CustomerID`) REFERENCES `customers` (`CustomerID`),
-  CONSTRAINT `fk_Bookings_Employees1` FOREIGN KEY (`EmployeeID`) REFERENCES `employees` (`EmployeeID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+  CONSTRAINT `fk_Bookings_Customers1` FOREIGN KEY (`CustomerID`) REFERENCES `customers` (`CustomerID`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -42,6 +39,7 @@ CREATE TABLE `bookings` (
 
 LOCK TABLES `bookings` WRITE;
 /*!40000 ALTER TABLE `bookings` DISABLE KEYS */;
+INSERT INTO `bookings` VALUES (1,5,'2022-10-20 00:00:00',1),(2,3,'2022-11-12 00:00:00',3),(3,2,'2022-10-11 00:00:00',2),(4,2,'2022-10-13 00:00:00',1);
 /*!40000 ALTER TABLE `bookings` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -54,4 +52,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-08-10 15:10:16
+-- Dump completed on 2023-09-17 15:15:22
