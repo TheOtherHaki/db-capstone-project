@@ -99,7 +99,6 @@ DELIMITER ;;
 CREATE DEFINER=`root`@`localhost` PROCEDURE `AddBooking`(IN table_c INT, IN book_c DATETIME, IN cust_c INT)
 BEGIN
 	INSERT INTO Bookings (TableNum, BookDate, CustomerID) VALUES (table_c, book_c, cust_c);
-    SELECT "New Booking Added";
 END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
@@ -147,7 +146,6 @@ DELIMITER ;;
 CREATE DEFINER=`root`@`localhost` PROCEDURE `CancelBooking`(IN bookID INT)
 BEGIN
 DELETE FROM Bookings WHERE BookingID = bookID;
-SELECT "Record Deleted";
 END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
@@ -225,7 +223,6 @@ DELIMITER ;;
 CREATE DEFINER=`root`@`localhost` PROCEDURE `UpdateBooking`(IN bookID INT, IN bookd DATETIME)
 BEGIN
 UPDATE Bookings SET BookingID = bookID, BookDate = bookd WHERE BookingID = bookID;
-SELECT "Record Updated";
 END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
@@ -242,4 +239,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-09-17 15:15:22
+-- Dump completed on 2023-09-19 13:14:23
